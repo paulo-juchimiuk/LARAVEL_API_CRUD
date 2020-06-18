@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "fba3bd0f-1e44-4c56-9b43-15f9cebc91be",
+		"name": "API_ORIGO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "novo_cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Claudianus Boast\",\r\n    \"email\": \"cboast0@fastcompany.com\",\r\n    \"telefone\": \"19957645371\",\r\n    \"estado\": \"Sao Paulo\",\r\n    \"cidade\": \"Araraquara\",\r\n    \"nascimento\": \"1993-06-07\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}/api/cliente/novo",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"api",
+						"cliente",
+						"novo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "assinar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cliente\": \"cboast0@fastcompany.com\",\r\n    \"plano\": \"FREE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}/api/plano/assinar",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"api",
+						"plano",
+						"assinar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}/api/clientes",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"api",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Clientes by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}/api/clientes/",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"api",
+						"clientes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"nome\": \"Claudianus Boast\",\r\n        \"email\": \"cboast0@fastcompany.com\",\r\n        \"telefone\": \"19957645371\",\r\n        \"estado\": \"Sao Paulo\",\r\n        \"cidade\": \"Araraquara SP\",\r\n        \"nascimento\": \"1993-06-07 00:00:00\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}/api/cliente/update/1",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"api",
+						"cliente",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}/api/cliente/delete/1",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"api",
+						"cliente",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0a65d751-eb6e-4b24-9e62-1c3db1634762",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4050a66e-78d6-4e70-bab3-bab68a5cf3df",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "126b1726-19d1-4642-ab8d-91e29f910ce8",
+			"key": "URL_BASE",
+			"value": "localhost:8000",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
